@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function AppBar() {
   let arr = [true, false, false, false, false, false];
   const [style, setStyle] = useState(arr);
@@ -20,7 +22,7 @@ export default function AppBar() {
 
   return (
     <div className="2xl:container 2xl:mx-auto">
-      <div className="bg-white rounded shadow-lg py-5 px-7">
+      <div className="bg-gray-900 py-5 px-7">
         <nav className="flex justify-between">
           <div className="flex items-center space-x-3 lg:pr-16 pr-6">
             <svg
@@ -35,69 +37,12 @@ export default function AppBar() {
                 fill="#1F2937"
               />
             </svg>
-            <h2 className="font-normal text-2xl leading-6 text-gray-800">
-              OvonRueden
+            <h2 className="font-normal text-2xl leading-6 text-gray-100">
+              Rogue Crypto Fund
             </h2>
           </div>
-          {/* For medium and plus sized devices */}
-          <ul className="hidden md:flex flex-auto space-x-2">
-            <li
-              onClick={() => selected(0)}
-              className={`${
-                style[0]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Collections
-            </li>
-            <li
-              onClick={() => selected(1)}
-              className={`${
-                style[1]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Arts
-            </li>
-            <li
-              onClick={() => selected(2)}
-              className={`${
-                style[2]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Space
-            </li>
-            <li
-              onClick={() => selected(3)}
-              className={`${
-                style[3]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Game
-            </li>
-            <li
-              onClick={() => selected(4)}
-              className={`${
-                style[4]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Utility
-            </li>
-            <li
-              onClick={() => selected(5)}
-              className={`${
-                style[5]
-                  ? "text-white bg-indigo-600"
-                  : "text-gray-600 border border-white bg-gray-50"
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-              Cards
-            </li>
-          </ul>
           <div className=" flex space-x-5 justify-center items-center pl-2">
-            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 ">
+            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-100 ">
               <svg
                 width={24}
                 height={24}
@@ -116,7 +61,7 @@ export default function AppBar() {
               <div className=" w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
             <svg
-              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
+              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 "
               width={24}
               height={24}
               viewBox="0 0 24 24"
@@ -176,39 +121,6 @@ export default function AppBar() {
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
-          <div className=" relative">
-            <ul
-              id="list"
-              className={`${
-                dropDown ? "hidden" : "block"
-              } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}>
-              <li
-                onClick={() => setSelectedText("Arts")}
-                className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                Arts
-              </li>
-              <li
-                onClick={() => setSelectedText("Space")}
-                className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                Space
-              </li>
-              <li
-                onClick={() => setSelectedText("Game")}
-                className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                Game
-              </li>
-              <li
-                onClick={() => setSelectedText("Utility")}
-                className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                Utility
-              </li>
-              <li
-                onClick={() => setSelectedText("Cards")}
-                className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                Cards
-              </li>
-            </ul>
           </div>
         </div>
       </div>
