@@ -1,11 +1,12 @@
 import DashboardLayout from "@/components/layouts/DashboardLayout";
 import MenuProvider from "@/context/MenuProvider";
-import PerformancePage from "@/components/dashboard/performance";
+import InvestmentLedger from "@/components/dashboard/cards/investment-ledger";
 
-export default function Dashboard() {
+export default function Investments() {
   return (
     <DashboardLayout>
-      <PerformancePage />
+      <h1>Investments</h1>
+      <InvestmentLedger />
     </DashboardLayout>
   );
 }

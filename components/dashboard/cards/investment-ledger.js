@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InvestmentLedgerRow from "./investment-ledger-row";
 
-function InvestmentLedger() {
+export default function InvestmentLedger() {
   const [show, setShow] = useState(null);
   return (
     <>
@@ -39,5 +39,3 @@ function InvestmentLedger() {
     </>
   );
 }
-
-export default Index;

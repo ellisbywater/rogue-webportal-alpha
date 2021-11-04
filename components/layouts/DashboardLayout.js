@@ -1,16 +1,20 @@
-import AppBar from "../dashboard/appbar";
-import DashMenu from "../dashboard/menu";
+import { useState } from "react";
+import MenuProvider from "@/context/MenuProvider";
+import { useRouter } from "next/router";
+import Header from "../shared/header";
+import Sidebar from "../dashboard/sidebar";
 
 export default function DashboardLayout({ children }) {
+  const router = useRouter();
+
   return (
-    <div className="bg-gray-900">
-      <AppBar />
-      <div className="flex flex-no-wrap min-h-screen">
-        <DashMenu />
-        <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6">
-          <div className="w-full h-full rounded">{children}</div>
-        </div>
+    <MenuProvider>
+      <Header>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      </Header>
+      <div className="bg-gray-900">
+        <Sidebar>{children}</Sidebar>
       </div>
-    </div>
+    </MenuProvider>
   );
 }
