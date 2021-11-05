@@ -8,7 +8,8 @@
       "@/config/*": ["config/*"],
       "@/context/*": ["context/*"],
       "@/helpers/*": ["helpers/*"],
-      "@/testdb/*": ["testdata/*"]
+      "@/testdb/*": ["testdata/*"],
+      "@/public/*": ["public/*"]
     }
   }
 }

@@ -1,6 +1,6 @@
 import IndexLayout from "@/components/layouts/IndexLayout";
 import Header from "@/components/shared/header";
-import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
@@ -22,12 +22,16 @@ export default function Home() {
               </p>
             </div>
             <div className="flex justify-center items-center">
-              <button className="focus:outline-none bg-green-700 transition duration-150 ease-in-out hover:bg-green-800 rounded text-white px-4 sm:px-10 py-2 sm:py-4 text-sm">
-                Apply
-              </button>
-              <button className="ml-4 focus:outline-none bg-white transition duration-150 ease-in-out hover:border-green-700 hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-4 sm:px-10 py-2 sm:py-4 text-sm">
-                Sign In
-              </button>
+              <Link href="/apply">
+                <button className="focus:outline-none bg-green-700 transition duration-150 ease-in-out hover:bg-green-800 rounded text-white px-4 sm:px-10 py-2 sm:py-4 text-md">
+                  Apply
+                </button>
+              </Link>
+              <Link href="/signin">
+                <button className="ml-4 focus:outline-none bg-white transition duration-150 ease-in-out hover:bg-gray-300 hover:text-green-800 rounded text-green-700 px-4 sm:px-10 py-2 sm:py-4 text-md">
+                  Sign In
+                </button>
+              </Link>
             </div>
           </div>
         </div>

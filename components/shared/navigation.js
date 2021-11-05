@@ -1,28 +1,19 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import logo from "@/public/roguefinance.png";
 
 export default function Navigation() {
   const [show, setShow] = useState(false);
   return (
     <>
       <nav className="w-full bg-gray-900">
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <svg
-            aria-label="Home"
-            className="cursor-pointer w-12 sm:w-auto"
-            id="logo"
-            enableBackground="new 0 0 300 300"
-            height={74}
-            viewBox="0 0 300 300"
-            width={73}
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g>
-              <path
-                fill="#4c51bf"
-                d="m234.735 35.532c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16zm0 24c-4.412 0-8-3.588-8-8s3.588-8 8-8 8 3.588 8 8-3.588 8-8 8zm-62.529-14c0-2.502 2.028-4.53 4.53-4.53s4.53 2.028 4.53 4.53c0 2.501-2.028 4.529-4.53 4.529s-4.53-2.027-4.53-4.529zm89.059 60c0 2.501-2.028 4.529-4.53 4.529s-4.53-2.028-4.53-4.529c0-2.502 2.028-4.53 4.53-4.53s4.53 2.029 4.53 4.53zm-40.522-5.459-88-51.064c-1.242-.723-2.773-.723-4.016 0l-88 51.064c-1.232.715-1.992 2.033-1.992 3.459v104c0 1.404.736 2.705 1.938 3.428l88 52.936c.635.381 1.35.572 2.062.572s1.428-.191 2.062-.572l88-52.936c1.201-.723 1.938-2.023 1.938-3.428v-104c0-1.426-.76-2.744-1.992-3.459zm-90.008-42.98 80.085 46.47-52.95 31.289-23.135-13.607v-21.713c0-2.209-1.791-4-4-4s-4 1.791-4 4v21.713l-26.027 15.309c-1.223.719-1.973 2.029-1.973 3.447v29.795l-52 30.727v-94.688zm0 198.707-80.189-48.237 51.467-30.412 24.723 14.539v19.842c0 2.209 1.791 4 4 4s4-1.791 4-4v-19.842l26.027-15.307c1.223-.719 1.973-2.029 1.973-3.447v-31.667l52-30.728v94.729z"
-              />
-            </g>
-          </svg>
+        <div className="container mx-auto px-20 flex items-center justify-between">
+          <div className="logo w-14">
+            <Link href="/">
+              <Image src={logo} className="cursor-pointer" />
+            </Link>
+          </div>
           <div>
             <div
               onclick="toggleMenu(true)"
@@ -83,14 +74,11 @@ export default function Navigation() {
                     </svg>
                   </div>
                   <ul className="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 md:bg-transparent z-20">
-                    <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0">
-                      <a href="javascript: void(0)">Blog</a>
-                    </li>
-                    <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                    <li className="text-gray-100 hover:text-green-600 cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                       <a href="javascript: void(0)">Litepaper</a>
                     </li>
-                    <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                      <a href="javascript: void(0)">Apply</a>
+                    <li className="text-gray-100 hover:text-green-600 cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                      <a href="/apply">Apply</a>
                     </li>
                   </ul>
                 </div>
@@ -116,21 +104,20 @@ export default function Navigation() {
                 </svg>
               </div>
               <ul className="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
-                <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0">
-                  <a href="javascript: void(0)">Blog</a>
+                <li className="text-gray-100 hover:text-green-600 cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                  <a href="/litepaper">Litepaper</a>
                 </li>
-                <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                  <a href="javascript: void(0)">Litepaper</a>
-                </li>
-                <li className="text-gray-100 hover:text-white cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
-                  <a href="javascript: void(0)">Apply</a>
+                <li className="text-gray-100 hover:text-green-600 cursor-pointer lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                  <a href="/apply">Apply</a>
                 </li>
               </ul>
             </div>
           </div>
-          <button className="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-green-700 rounded border border-gray-200 hover:border-green-700 text-gray-200 px-4 sm:px-8 py-1 sm:py-3 text-sm">
-            Sign In
-          </button>
+          <Link href="/dashboard">
+            <button className="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-green-700 rounded border border-green-700 hover:border-green-700 text-gray-200 px-4 sm:px-8 py-1 sm:py-3 text-sm">
+              Sign In
+            </button>
+          </Link>
         </div>
       </nav>
     </>
