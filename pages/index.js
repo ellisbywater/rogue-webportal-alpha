@@ -23,10 +23,10 @@ export default function Home() {
             </div>
             <div className="flex justify-center items-center">
               <button className="focus:outline-none bg-green-700 transition duration-150 ease-in-out hover:bg-green-800 rounded text-white px-4 sm:px-10 py-2 sm:py-4 text-sm">
-                Get Started
+                Apply
               </button>
               <button className="ml-4 focus:outline-none bg-white transition duration-150 ease-in-out hover:border-green-700 hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-4 sm:px-10 py-2 sm:py-4 text-sm">
-                Live Demo
+                Sign In
               </button>
             </div>
           </div>
