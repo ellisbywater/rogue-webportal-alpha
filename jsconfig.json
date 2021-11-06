@@ -9,7 +9,8 @@
       "@/context/*": ["context/*"],
       "@/helpers/*": ["helpers/*"],
       "@/testdb/*": ["testdata/*"],
-      "@/public/*": ["public/*"]
+      "@/public/*": ["public/*"],
+      "@/moralis/*": ["moralis/*"]
     }
   }
 }

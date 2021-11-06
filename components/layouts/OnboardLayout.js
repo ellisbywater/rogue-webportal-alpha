@@ -1,26 +1,28 @@
 import { useRouter } from "next/router";
 import Header from "@/components/shared/header";
-import Navigation from "@/components/shared/navigation";
+import { MinNavigation } from "@/components/shared/navigation";
 import Footer from "@/components/shared/footer";
-export default function IndexLayout({
+import ProgressBar from "@/components/onboarding/progressbar";
+
+export default function OnboardingLayout({
   title,
   keywords,
   description,
   children,
 }) {
-  const router = useRouter();
   return (
     <>
       <Header title={title} keywords={keywords} description={description} />
-      <Navigation />
+      <MinNavigation />
+      <ProgressBar />
       <div>{children}</div>
       <Footer />
     </>
   );
 }
 
-IndexLayout.defaultProps = {
-  title: "Welcome",
+OnboardingLayout.defaultProps = {
+  title: "Onboarding",
   description: "A new type of private hedge fund.",
   keyword: "Rogue.Finance, Cryptocurrency, Blockchain, Private Hedge Fund",
 };

@@ -12,9 +12,9 @@ export default function SidebarWrapper({ children }) {
   const [menu3, setMenu3] = useState(false);
 
   return (
-    <>
+    <div className="h-auto bg-gray-900">
       <div className="w-full h-full bg-gray-900">
-        <div className="flex flex-no-wrap">
+        <div className="h-full flex flex-no-wrap">
           {/* Sidebar starts */}
           <div className="absolute lg:relative w-64 h-screen bg-gray-900 hidden lg:block">
             <div className="h-16 w-full flex items-center px-8">
@@ -390,13 +390,13 @@ export default function SidebarWrapper({ children }) {
             </nav>
             {/* Navigation ends */}
             {/* Remove class [ h-64 ] when adding a card block */}
-            <div className="container mx-auto py-8 h-64 md:w-4/5 w-11/12 px-6">
+            <div className="bg-gray-900 mx-auto pt-8 h-full md:w-4/5 w-11/12 px-6">
               {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
-              <div className="w-full h-full rounded ">{children}</div>
+              <div className="w-full h-full">{children}</div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
