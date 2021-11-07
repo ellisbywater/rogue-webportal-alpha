@@ -1,12 +1,20 @@
 const { Moralis } = require("moralis/types");
 
 export class Applicant extends Moralis.Object {
-  constructor(firstName, lastName, emailAddr, phoneNumber, message) {
+  constructor(
+    firstName,
+    lastName,
+    emailAddr,
+    phoneNumber,
+    message,
+    alreadyCrypto
+  ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.emailAddr = emailAddr;
     this.phoneNumber = phoneNumber;
     this.message = message || "";
+    this.alreadyCrypto = alreadyCrypto || false;
     this.date_submitted = Date.now();
   }
 }

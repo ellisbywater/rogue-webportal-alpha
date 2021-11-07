@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Moralis from "./init";
-import { RogueUser } from "./models/RogueUser";
+import { RogueUser, Applicant } from "./models/RogueUser";
 
 const MoralisAuthContext = createContext();
 
@@ -20,6 +20,29 @@ export default MoralisAuthProvider = ({ children }) => {
     setUser(user);
   };
 
+  const createApplicant = async (
+    first,
+    last,
+    email,
+    phone,
+    message,
+    alreadyCrypto
+  ) => {
+    const newApplicant = new Applicant(
+      first,
+      last,
+      email,
+      phone,
+      message,
+      alreadyCrypto
+    );
+    try {
+      await newApplicant.save();
+    } catch (error) {
+      alert("Error: " + error.code + " " + error.message);
+    }
+  };
+
   const registerUser = async (user) => {
     const newUser = new RogueUser();
     newUser.set("username", user.username);
@@ -36,4 +59,8 @@ export default MoralisAuthProvider = ({ children }) => {
   };
 
   const login = async (username, password) => {};
+
+  const logout = async () => {};
+
+  const updatePassword = async () => {};
 };

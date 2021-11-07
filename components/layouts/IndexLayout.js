@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Header from "@/components/shared/header";
 import Navigation from "@/components/shared/navigation";
 import Footer from "@/components/shared/footer";
+
 export default function IndexLayout({
   title,
   keywords,
