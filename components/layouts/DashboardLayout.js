@@ -1,15 +1,10 @@
-import { useState } from "react";
-import MenuProvider from "@/context/MenuProvider";
-import { useRouter } from "next/router";
 import Header from "../shared/header";
 import Sidebar from "../dashboard/sidebar";
 import Footer from "../shared/footer";
 
 export default function DashboardLayout({ children }) {
-  const router = useRouter();
-
   return (
-    <MenuProvider>
+    <>
       <Header>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       </Header>
@@ -17,6 +12,6 @@ export default function DashboardLayout({ children }) {
         <Sidebar>{children}</Sidebar>
         <Footer />
       </div>
-    </MenuProvider>
+    </>
   );
 }

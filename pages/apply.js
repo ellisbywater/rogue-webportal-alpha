@@ -78,6 +78,9 @@ export default function Apply() {
                   type="name"
                   className="text-base leading-none text-gray-200 p-3 focus:oultine-none focus:border-green-700 mt-4 bg-gray-800 border rounded border-gray-200 placeholder-gray-200"
                 />
+                <span className="font-semibold text-red-600 ">
+                  {errors.lastName?.message}
+                </span>
               </div>
             </div>
             <div className="md:flex items-center mt-8">
@@ -96,6 +99,9 @@ export default function Apply() {
                   type="email"
                   className="text-base leading-none text-gray-200 p-3 focus:oultine-none focus:border-green-700 mt-4 bg-gray-800 border rounded border-gray-200 placeholder-gray-100 "
                 />
+                <span className="font-semibold text-red-600 ">
+                  {errors.email?.message}
+                </span>
               </div>
               <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
                 <label className="text-base font-semibold leading-none text-gray-200">
@@ -112,6 +118,9 @@ export default function Apply() {
                   className="text-base leading-none text-gray-200 p-3 focus:oultine-none focus:border-green-700 mt-4 bg-gray-800 border rounded border-gray-200 placeholder-gray-200"
                 />
               </div>
+              <span className="font-semibold text-red-600 ">
+                {errors.phone?.message}
+              </span>
             </div>
             <div classNam="md:flex items-center mt-8">
               <div className="md:w-72 flex flex-col mt-10">
@@ -126,6 +135,9 @@ export default function Apply() {
                   className="text-base leading-none text-gray-200 p-3 focus:oultine-none focus:border-green-700 mt-4 bg-gray-800 border rounded border-gray-200 placeholder-gray-200"
                   placeholder="CODE"
                 />
+                <span className="font-semibold text-red-600 ">
+                  {errors.referral?.message}
+                </span>
               </div>
               <div className="md:w-72 flex flex-col mt-10">
                 <label className="text-base font-semibold leading-none text-gray-200">
@@ -161,6 +173,9 @@ export default function Apply() {
                   <p className="mt-4 ml-2 text-base font-normal text-gray-200">
                     Yes
                   </p>
+                  <span className="font-semibold text-red-600 ">
+                    {errors.alreadyCrypto?.message}
+                  </span>
                 </div>
               </div>
             </div>
@@ -178,6 +193,9 @@ export default function Apply() {
                   className="h-36 text-base leading-none text-gray-200 p-3 focus:oultine-none focus:border-green-700 mt-4 bg-gray-800 border rounded border-gray-200 placeholder-gray-100 resize-none"
                   defaultValue={""}
                 />
+                <span className="font-semibold text-red-600 ">
+                  {errors.message?.message}
+                </span>
               </div>
             </div>
             <p className="text-xs leading-3 text-gray-200 mt-4">

@@ -1,5 +1,6 @@
 class Investment {
-  constructor(sender, reciever, amount, token_address, txhash) {
+  constructor(description, sender, reciever, amount, token_address, txhash) {
+    this.description = description;
     this.sender = sender;
     this.reciever = reciever;
     this.txhash = txhash;

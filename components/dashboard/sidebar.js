@@ -3,13 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/roguefinance_white.png";
 import { FaChartLine, FaBorderAll, FaLayerGroup, FaCog } from "react-icons/fa";
+import { useRouter } from "next/router";
 export default function SidebarWrapper({ children }) {
+  const router = useRouter();
+  const path = router.pathname.substring(router.pathname.lastIndexOf("/") + 1);
   const [show, setShow] = useState(false);
   const [profile, setProfile] = useState(false);
-  const [menu, setMenu] = useState(false);
-  const [menu1, setMenu1] = useState(false);
-  const [menu2, setMenu2] = useState(false);
-  const [menu3, setMenu3] = useState(false);
+  const [endpath, setEndpath] = useState(path);
 
   return (
     <div className="h-auto bg-gray-900">
@@ -25,7 +25,10 @@ export default function SidebarWrapper({ children }) {
               </div>
             </div>
             <ul aria-orientation="vertical" className="py-8 md:py-20">
-              <li className="pl-6 cursor-pointer text-white text-base leading-3 tracking-normal pb-4 pt-5 text-green-700 focus:text-green-700 focus:outline-none">
+              <li
+                className={`"pl-6 cursor-pointer text-white text-base leading-3 tracking-normal pb-4 pt-5 hover:text-green-600 focus:text-green-600 focus:outline-none" ${
+                  endpath == "dashboard" ? "text-green-600" : ""
+                }`}>
                 <div className="flex items-center p-4 border-b border-gray-500">
                   <FaBorderAll />
                   <Link href="/dashboard">
@@ -33,7 +36,10 @@ export default function SidebarWrapper({ children }) {
                   </Link>
                 </div>
               </li>
-              <li className="pl-6 cursor-pointer text-gray-100 text-base leading-3 tracking-normal mb-4 py-2 hover:text-green-700 focus:text-green-700 focus:outline-none">
+              <li
+                className={`"pl-6 cursor-pointer text-white text-base leading-3 tracking-normal pb-4 pt-5 hover:text-green-600 focus:text-green-600 focus:outline-none" ${
+                  endpath == "performance" ? "text-green-600" : ""
+                }`}>
                 <div className="flex items-center p-4 border-b border-gray-500">
                   <FaChartLine />
                   <Link href="/dashboard/performance">
@@ -41,7 +47,10 @@ export default function SidebarWrapper({ children }) {
                   </Link>
                 </div>
               </li>
-              <li className="pl-6 cursor-pointer text-gray-200 text-base leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-green-700 focus:text-green-700 focus:outline-none">
+              <li
+                className={`"pl-6 cursor-pointer text-white text-base leading-3 tracking-normal pb-4 pt-5 hover:text-green-600 focus:text-green-600 focus:outline-none" ${
+                  endpath == "investments" ? "text-green-600" : ""
+                }`}>
                 <div className="flex items-center p-4 border-b border-gray-500">
                   <FaLayerGroup />
                   <Link href="/dashboard/investments">
@@ -49,7 +58,10 @@ export default function SidebarWrapper({ children }) {
                   </Link>
                 </div>
               </li>
-              <li className="pl-6 cursor-pointer text-gray-200 text-base leading-3 tracking-normal hover:text-green-700 focus:text-green-700 focus:outline-none">
+              <li
+                className={`"pl-6 cursor-pointer text-white text-base leading-3 tracking-normal pb-4 pt-5 hover:text-green-600 focus:text-green-600 focus:outline-none" ${
+                  endpath == "settings" ? "text-green-600" : ""
+                }`}>
                 <div className="flex items-center p-4">
                   <FaCog />
                   <Link href="/dashboard/settings">

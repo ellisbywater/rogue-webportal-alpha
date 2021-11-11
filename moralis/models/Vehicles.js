@@ -10,8 +10,6 @@ class Investment extends Moralis.Object {
     this.token_address = token_address;
     this.executionDate;
   }
-
-  execute() {}
 }
 
 class Reserve extends Moralis.Object {

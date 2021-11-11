@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
         <div className="py-16 flex flex-col justify-center items-center">
           <p className="mt-6 text-xs lg:text-sm leading-none text-gray-50">
-            2021 Tailwind UI Kit. All Rights Reserved.
+            2021 Rogue DeFi, LLC. All Rights Reserved.
           </p>
         </div>
       </footer>

@@ -66,7 +66,7 @@ export default function PerformanceGraph({}) {
   });
   return (
     <>
-      <div className="xl:w-3/4 2xl:w-4/5 w-full bg-gray-100 md:p-10 p-4 rounded-lg shadow-lg">
+      <div className="w-full bg-gray-100 md:p-10 p-4 rounded-lg shadow-lg">
         <div className="lg:flex justify-between w-full items-center">
           <div className="py-3 md:px-4 flex items-center bg-gray-50 rounded-xl">
             <p className="text-xs font-medium leading-none text-center text-gray-500">

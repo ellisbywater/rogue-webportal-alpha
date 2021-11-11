@@ -1,11 +1,12 @@
 import DashboardLayout from "@/components/layouts/DashboardLayout";
 import MenuProvider from "@/context/MenuProvider";
 import InvestmentLedger from "@/components/dashboard/cards/investment-ledger";
+import { useRouter } from "next/router";
 
 export default function Investments() {
+  const router = useRouter();
   return (
     <DashboardLayout>
-      <h1>Investments</h1>
       <InvestmentLedger />
     </DashboardLayout>
   );

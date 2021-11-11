@@ -16,6 +16,11 @@ export class Applicant extends Moralis.Object {
     this.message = message || "";
     this.alreadyCrypto = alreadyCrypto || false;
     this.date_submitted = Date.now();
+    this.accepted = false;
+  }
+
+  acceptApplicant() {
+    this.accepted = true;
   }
 }
 
@@ -45,3 +50,6 @@ export class RogueUser extends Moralis.User {
     return this.pin;
   }
 }
+
+Moralis.Object.registerSubclass("Applicant", Applicant);
+Moralis.Object.registerSubclass("RogueUser", RogueUser);
