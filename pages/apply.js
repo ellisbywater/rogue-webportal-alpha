@@ -3,8 +3,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 import * as Yup from "yup";
+import { useNewMoralisObject } from "react-moralis";
 
 export default function Apply() {
+  const { isSaving, error, save } = useNewMoralisObject('Applicant')
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
@@ -32,8 +34,7 @@ export default function Apply() {
   const { errors } = formState;
 
   const onSubmit = (data) => {
-    alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
-    return false;
+    save({...data})
   };
 
   return (
@@ -43,6 +44,9 @@ export default function Apply() {
           <p className="md:text-3xl text-xl font-bold leading-7 text-center text-gray-200">
             Investor Application
           </p>
+         
+          {error &&  <span className="font-semibold text-center text-red-600 ">{error}</span>}
+           
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="md:flex items-center mt-12">
               <div className="md:w-72 flex flex-col">
@@ -205,6 +209,7 @@ export default function Apply() {
             <div className="flex items-center justify-center w-full">
               <button
                 type="submit"
+                disabled={isSaving}
                 className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-800 focus:ring-2 focus:ring-offset-2 focus:ring-green-700 focus:outline-none">
                 SUBMIT
               </button>

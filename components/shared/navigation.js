@@ -113,7 +113,7 @@ export default function Navigation() {
               </ul>
             </div>
           </div>
-          <Link href="/dashboard">
+          <Link href="/auth">
             <button className="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-green-700 rounded border border-green-700 hover:border-green-700 text-gray-200 px-4 sm:px-8 py-1 sm:py-3 text-sm">
               Sign In
             </button>
